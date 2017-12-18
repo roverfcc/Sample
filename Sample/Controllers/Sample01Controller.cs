@@ -24,6 +24,7 @@ namespace Sample.Controllers
             return View();
         }
 
+        // Here we do the work
         private object CalculateOhmValue(string band1, string band2, string band3, string multiplier, string tolerance, string temperature)
         {
             double OhmValue = 0;
@@ -48,9 +49,12 @@ namespace Sample.Controllers
                 OhmValue = ((100 * d1) + (10 * d2) + (1 * d3)) * m;
             else
                 OhmValue = ((10 * d1) + (1 * d2)) * m;
+          
             return (OhmValue + " " + "Ohms" + " " + tol + " " + tem);
            //RALPH
         }
+        //All this may need to come from a DB.
+        //It has been the same for a long time and will be the same for now.
         int ColortoOhm(string Color)
         {
             int tmp = 0;
