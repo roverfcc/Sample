@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = " IOhmValueCalculator";
+}
+
+<h2>Resistor Ohms Calculator </h2>
+<div id="navcontainer">
+    <ul>
+        <li><a href="#">Band1</a></li>
+        <li><a href="#">Band2</a></li>
+        <li><a href="#">Band3</a></li>
+        <li><a href="#">Multiplier</a></li>
+        <li><a href="#">Tolerance</a></li>
+        <li><a href="#">Temperature Coefficient</a></li>
+    </ul>
+</div>
+@using (Html.BeginForm("Index", "Sample01", FormMethod.Post))
+{
+    <div id="navcontainer">
+        <ul>
+            <li>
+
+                <select name="Band1">
+                    <option value="Brown">Brown</option>
+                    <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Puple">Puple</option>
+                    <option value="Gray">Gray</option>
+                    <option value="White">White</option>
+                </select>
+
+            </li>
+            <li>
+                <select name="Band2">
+                    <option value="Black">Black</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Puple">Puple</option>
+                    <option value="Gray">Gray</option>
+                    <option value="White">White</option>
+                </select>
+            </li>
+            <li>
+                <select name="Band3">
+                    <option value="None">None</option>
+                    <option value="Black">Black</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Puple">Puple</option>
+                    <option value="Gray">Gray</option>
+                    <option value="White">White</option>
+                </select>
+            </li>
+            <li>
+                <select name="Multiplier">
+                    <option value="None">None</option>
+                    <option value="Sliver">Sliver</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Black">Black</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Puple">Puple</option>
+                </select>
+            </li>
+            <li>
+                <select name="Tolerance">
+                    <option value="None">None</option>
+                    <option value="Sliver">Sliver</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Puple">Puple</option>
+                </select>
+            </li>
+            <li>
+                <select name="Temperature">
+                    <option value="None">None</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                </select>
+            </li>
+
+        </ul>
+
+    </div>
+    <span>@ViewData["result"]</span>
+    <input type="submit" name="Sample01" value="Calculate" />
+
+}
+
+<style type="text/css" media="screen">
+    #navcontainer ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+        #navcontainer ul li {
+            display: inline;
+        }
+
+            #navcontainer ul li a {
+                text-decoration: none;
+                padding: .2em 1em;
+                color: #fff;
+                background-color: #036;
+            }
+
+                #navcontainer ul li a:hover {
+                    color: #fff;
+                    background-color: #369;
+                }
+
+    #navcontainer {
+        margin-bottom: 1em;
+    }
+</style>
