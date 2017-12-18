@@ -1,24 +1,24 @@
 ﻿@{
-    ViewData["Title"] = " IOhmValueCalculator";
+    ViewData["Title"] = " IOhmValueCalculator ";
 }
 
-<h2>Resistor Ohms Calculator </h2>
-<div id="navcontainer">
-    <ul>
-        <li><a href="#">Band1</a></li>
-        <li><a href="#">Band2</a></li>
-        <li><a href="#">Band3</a></li>
-        <li><a href="#">Multiplier</a></li>
-        <li><a href="#">Tolerance</a></li>
-        <li><a href="#">Temperature Coefficient</a></li>
-    </ul>
-</div>
+<center><h2>Resistor Ohms Calculator</h2></center>
+
 @using (Html.BeginForm("Index", "Sample01", FormMethod.Post))
 {
-    <div id="navcontainer">
-        <ul>
-            <li>
+    <table>
+        <tr>
 
+            <th>Band1</th>
+            <th>Band2</th>
+            <th>Band3</th>
+            <th>Multiplier</th>
+            <th>Tolerance</th>
+            <th>Temperature Coefficient</th>
+        </tr>
+
+        <tr>
+            <td>
                 <select name="Band1">
                     <option value="Brown">Brown</option>
                     <option value="Red">Red</option>
@@ -30,9 +30,9 @@
                     <option value="Gray">Gray</option>
                     <option value="White">White</option>
                 </select>
+            </td>
 
-            </li>
-            <li>
+            <td>
                 <select name="Band2">
                     <option value="Black">Black</option>
                     <option value="Brown">Brown</option>
@@ -45,8 +45,9 @@
                     <option value="Gray">Gray</option>
                     <option value="White">White</option>
                 </select>
-            </li>
-            <li>
+            </td>
+
+            <td>
                 <select name="Band3">
                     <option value="None">None</option>
                     <option value="Black">Black</option>
@@ -60,8 +61,10 @@
                     <option value="Gray">Gray</option>
                     <option value="White">White</option>
                 </select>
-            </li>
-            <li>
+            </td>
+
+
+            <td>
                 <select name="Multiplier">
                     <option value="None">None</option>
                     <option value="Sliver">Sliver</option>
@@ -75,8 +78,9 @@
                     <option value="Blue">Blue</option>
                     <option value="Puple">Puple</option>
                 </select>
-            </li>
-            <li>
+            </td>
+
+            <td>
                 <select name="Tolerance">
                     <option value="None">None</option>
                     <option value="Sliver">Sliver</option>
@@ -87,8 +91,9 @@
                     <option value="Blue">Blue</option>
                     <option value="Puple">Puple</option>
                 </select>
-            </li>
-            <li>
+            </td>
+
+            <td>
                 <select name="Temperature">
                     <option value="None">None</option>
                     <option value="Brown">Brown</option>
@@ -96,16 +101,34 @@
                     <option value="Orange">Orange</option>
                     <option value="Yellow">Yellow</option>
                 </select>
-            </li>
+            </td>
+           <tr>
+            <td><span>@ViewData["result"]</span></td>
+            <td><input type="submit" name="Sample01" value="Calculate" /></td>
+           </tr>
+</table>
 
-        </ul>
-
-    </div>
-    <span>@ViewData["result"]</span>
-    <input type="submit" name="Sample01" value="Calculate" />
+   
 
 }
 
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 <style type="text/css" media="screen">
     #navcontainer ul {
         margin: 0;
