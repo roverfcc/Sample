@@ -34,6 +34,7 @@ namespace Sample.Controllers
             double m = 1;
             string tol = "";
             string tem = "";
+            string s = " ";
 
             d1 = ColortoOhm(band1);
             d2 = ColortoOhm(band2);
@@ -49,8 +50,19 @@ namespace Sample.Controllers
                 OhmValue = ((100 * d1) + (10 * d2) + (1 * d3)) * m;
             else
                 OhmValue = ((10 * d1) + (1 * d2)) * m;
+            if (OhmValue > 1000000)
+            {
+                s = "M";
+                OhmValue = OhmValue / 1000000;
+            }
+            else if(OhmValue > 1000)
+            {
+                s = "K";
+                OhmValue = OhmValue / 1000;
+            }
           
-            return (OhmValue + " " + "Ohms" + " " + tol + " " + tem);
+            
+            return (OhmValue + " " + s + "Ohms" + " " + tol + " " + tem);
            //RALPH
         }
         //All this may need to come from a DB.
